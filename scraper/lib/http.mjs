@@ -86,7 +86,7 @@ export async function allowedByRobots(url) {
 }
 
 // ── Pedido con espera y reintentos ───────────────────────────────────
-export function makeClient({ delayMs = 700, retries = 3 } = {}) {
+export function makeClient({ delayMs = 700, retries = 5 } = {}) {
   let last = 0;
   return async function get(url, { json = false, allow404 = false, body } = {}) {
     if (!(await allowedByRobots(url))) {
@@ -111,7 +111,7 @@ export function makeClient({ delayMs = 700, retries = 3 } = {}) {
       if (res.status === 404 && allow404) return null;
       if ((res.status === 429 || res.status >= 500) && attempt < retries) {
         const ra = parseInt(res.headers.get('retry-after') || '', 10);
-        await sleep(isFinite(ra) ? ra * 1000 : 3000 * (attempt + 1));
+        await sleep(isFinite(ra) ? Math.min(ra, 120) * 1000 : (res.status === 429 ? 10000 : 3000) * (attempt + 1));
         continue;
       }
       if (!res.ok) {

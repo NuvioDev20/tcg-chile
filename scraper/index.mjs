@@ -71,9 +71,34 @@ async function resolvePlatform(store, get, state) {
   throw new Error('No se reconoció la plataforma de la tienda (ni Shopify, ni WooCommerce, ni Jumpseller, ni sitemap con JSON-LD)');
 }
 
+// Algunas plataformas (Jumpseller) limitan los pedidos por IP entre todas sus tiendas:
+// no se leen más de N tiendas de la misma plataforma a la vez.
+const PLATFORM_LIMIT = { jumpseller: 2 };
+const running = {};
+const waiting = {};
+async function acquire(platform) {
+  const max = PLATFORM_LIMIT[platform];
+  if (!max) return () => {};
+  while ((running[platform] || 0) >= max) await new Promise((r) => (waiting[platform] ||= []).push(r));
+  running[platform] = (running[platform] || 0) + 1;
+  return () => {
+    running[platform]--;
+    waiting[platform]?.shift()?.();
+  };
+}
+
 async function scrapeStore(store, settings, state, now) {
   const get = makeClient({ delayMs: store.delayMs ?? settings.delayMs ?? 700 });
   const platform = await resolvePlatform(store, get, state);
+  const release = await acquire(platform);
+  try {
+    return await scrapeWith(platform, store, settings, get, state, now);
+  } finally {
+    release();
+  }
+}
+
+async function scrapeWith(platform, store, settings, get, state, now) {
   const adapter = ADAPTERS[platform];
 
   const prevPages = new Map(Object.entries(state.pages?.[store.id] || {}));

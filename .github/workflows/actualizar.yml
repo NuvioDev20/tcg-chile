@@ -17,12 +17,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  actualizar:
+  leer:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     env:
       # Dirección pública del sitio. Si usas dominio propio, créala en
       # Settings → Secrets and variables → Actions → Variables con el nombre SITE_URL.
@@ -42,10 +39,17 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: public
 
+  publicar:
+    needs: leer
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - name: Publicar
         id: deploy
         uses: actions/deploy-pages@v4
