@@ -1,0 +1,13 @@
+{
+  "name": "comparador-pokemon-tcg-chile",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Comparador de precios de Pokémon TCG (singles y sellado) en tiendas chilenas",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "scrape": "node scraper/index.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "node --test test/*.test.mjs"
+  }
+}

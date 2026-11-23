@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Comparador Pokémon TCG Chile</title>
+  <meta name="description" content="Compara precios de Pokémon TCG (singles y sellado) en tiendas chilenas. Filtra por edición, idioma y tipo de producto." />
+  <meta name="theme-color" content="#d7261e" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="brand" href="#" aria-label="Inicio">
+        <img src="icon.svg" alt="" width="30" height="30" />
+        <span>Comparador <b>Pokémon TCG</b> Chile</span>
+      </a>
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 0 1 5.9 12.1l4.3 4.3-1.4 1.4-4.3-4.3A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+        <input id="q" type="search" placeholder="Busca una carta, set o producto… (ej. Charizard, ETB Caos Creciente, 151)" autocomplete="off" />
+      </div>
+      <button class="status" id="status" type="button" title="Ver estado de las tiendas">
+        <span class="dot"></span><span id="status-text">Cargando…</span>
+      </button>
+    </div>
+    <nav class="cats" id="cats" aria-label="Categoría">
+      <button data-cat="">Todo</button>
+      <button data-cat="singles">Singles</button>
+      <button data-cat="sellado">Sellado</button>
+      <button data-cat="accesorios">Accesorios</button>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="filters" id="filters" aria-label="Filtros">
+      <div class="filters-head">
+        <h2>Filtros</h2>
+        <button class="link" id="clear" type="button">Limpiar</button>
+        <button class="close" id="close-filters" type="button" aria-label="Cerrar filtros">✕</button>
+      </div>
+
+      <section class="f">
+        <label class="switch"><input type="checkbox" id="stock" checked /> <span>Sólo con stock</span></label>
+        <label class="switch"><input type="checkbox" id="drops" /> <span>Sólo bajas de precio (7 días)</span></label>
+      </section>
+
+      <section class="f">
+        <h3>Tipo de producto</h3>
+        <div id="f-type" class="opts"></div>
+      </section>
+
+      <section class="f">
+        <h3>Idioma</h3>
+        <div id="f-lang" class="chips"></div>
+      </section>
+
+      <section class="f">
+        <h3>Edición</h3>
+        <input id="set-search" class="mini" type="search" placeholder="Buscar edición…" />
+        <div id="f-set" class="opts scroll"></div>
+      </section>
+
+      <section class="f">
+        <h3>Precio (CLP)</h3>
+        <div class="range">
+          <input id="pmin" type="number" inputmode="numeric" min="0" step="1000" placeholder="Mín." />
+          <span>—</span>
+          <input id="pmax" type="number" inputmode="numeric" min="0" step="1000" placeholder="Máx." />
+        </div>
+      </section>
+
+      <section class="f">
+        <h3>Tiendas</h3>
+        <div id="f-store" class="opts scroll"></div>
+      </section>
+    </aside>
+
+    <main>
+      <div class="toolbar">
+        <button class="btn-filters" id="open-filters" type="button">Filtros <span id="nfilters"></span></button>
+        <p id="summary" class="summary" aria-live="polite"></p>
+        <label class="sort">Ordenar
+          <select id="sort">
+            <option value="price-asc">Menor precio</option>
+            <option value="price-desc">Mayor precio</option>
+            <option value="stores">Más tiendas</option>
+            <option value="spread">Mayor diferencia entre tiendas</option>
+            <option value="drops">Bajas de precio recientes</option>
+            <option value="new">Recién agregados</option>
+            <option value="set">Edición más nueva</option>
+            <option value="name">Nombre (A-Z)</option>
+          </select>
+        </label>
+      </div>
+      <div id="active" class="active"></div>
+      <ol id="results" class="results"></ol>
+      <div class="more-wrap"><button id="more" class="more" type="button" hidden>Mostrar más</button></div>
+      <div id="empty" class="empty" hidden>
+        <p><b>No hay resultados con estos filtros.</b></p>
+        <p>Prueba quitando algún filtro o buscando con otras palabras.</p>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="stores-dialog">
+    <form method="dialog">
+      <h2>Tiendas revisadas</h2>
+      <p class="muted" id="stores-when"></p>
+      <ul id="stores-list" class="stores-list"></ul>
+      <p class="muted small">Los precios se leen automáticamente desde cada tienda y pueden cambiar. Confirma siempre el precio final en la tienda antes de comprar.</p>
+      <button class="btn" value="close">Cerrar</button>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <footer class="foot">
+    <p>Precios referenciales leídos de las tiendas · Página no afiliada a The Pokémon Company ni a las tiendas.</p>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

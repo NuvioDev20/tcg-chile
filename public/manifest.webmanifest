@@ -1,0 +1,11 @@
+{
+  "name": "Comparador Pokémon TCG Chile",
+  "short_name": "TCG Precios",
+  "description": "Compara precios de Pokémon TCG en tiendas chilenas",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f7",
+  "theme_color": "#d7261e",
+  "lang": "es-CL",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

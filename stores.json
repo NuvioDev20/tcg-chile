@@ -1,0 +1,93 @@
+{
+  "settings": {
+    "concurrency": 4,
+    "delayMs": 700,
+    "minPrice": 100
+  },
+  "stores": [
+    {
+      "id": "afkstore",
+      "name": "AFK Store",
+      "url": "https://www.afkstore.cl",
+      "city": "Santiago (Ñuñoa)",
+      "platform": "shopify"
+    },
+    {
+      "id": "lacomarca",
+      "name": "Tienda La Comarca",
+      "url": "https://www.tiendalacomarca.cl",
+      "platform": "shopify",
+      "defaultSinglesLanguage": "en"
+    },
+    {
+      "id": "singlesvault",
+      "name": "Singles Vault",
+      "url": "https://www.singlesvault.cl",
+      "platform": "shopify",
+      "onlyPokemon": true,
+      "defaultSinglesLanguage": "en"
+    },
+    {
+      "id": "oasisgames",
+      "name": "Oasis Games",
+      "url": "https://www.oasisgames.cl",
+      "city": "Las Condes",
+      "platform": "shopify",
+      "defaultSinglesLanguage": "en"
+    },
+    {
+      "id": "cardnexus",
+      "name": "CardNexus",
+      "url": "https://cardnexus.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "pandora",
+      "name": "Pandora Store",
+      "url": "https://www.pandorastore.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Plataforma propia sin catálogo legible (sin JSON público ni JSON-LD en el sitemap)."
+    },
+    {
+      "id": "newplayer",
+      "name": "New Player Chile",
+      "url": "https://www.newplayerchile.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Cloudflare bloquea lectores automáticos (HTTP 403)."
+    },
+    {
+      "id": "genrio",
+      "name": "Genrio Store",
+      "url": "https://genrio.cl",
+      "city": "Temuco",
+      "platform": "auto",
+      "onlyPokemon": true,
+      "enabled": false,
+      "nota": "Sitio de una sola página (SPA); el catálogo no se puede leer sin un navegador."
+    },
+    {
+      "id": "gorilatcg",
+      "name": "Gorila TCG",
+      "url": "https://www.gorilatcg.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "tcgprime",
+      "name": "TCG Prime",
+      "url": "https://tcgprime.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tcgcards",
+      "name": "tcgcards (marketplace)",
+      "url": "https://tcgcards.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Marketplace con varios vendedores por carta; necesita un adaptador propio."
+    }
+  ]
+}

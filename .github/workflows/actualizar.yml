@@ -1,0 +1,51 @@
+name: Actualizar precios
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' # cada 15 minutos (GitHub puede atrasarlo unos minutos en horas peak)
+  workflow_dispatch: {} # botón "Run workflow" para actualizar a mano
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: actualizar-precios
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      # Dirección pública del sitio. Si usas dominio propio, créala en
+      # Settings → Secrets and variables → Actions → Variables con el nombre SITE_URL.
+      PREV_SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Pruebas
+        run: npm test
+
+      - name: Leer precios de las tiendas
+        run: node scraper/index.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Publicar
+        id: deploy
+        uses: actions/deploy-pages@v4
