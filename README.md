@@ -23,8 +23,9 @@ El recolector lee cada tienda por su API pública, según su plataforma:
 | Plataforma | Cómo se lee | Ejemplos |
 |---|---|---|
 | Shopify | `/products.json` y `/collections.json` | AFK Store, La Comarca, Singles Vault, Oasis Games |
-| WooCommerce | `/wp-json/wc/store/v1/products` | CardNexus, TCG Prime |
-| Otras (Jumpseller, sitios propios…) | sitemap + datos estructurados JSON-LD de cada producto | — |
+| WooCommerce | `/wp-json/wc/store/v1/products` | CardNexus, TCG Prime, Level Up |
+| Jumpseller | catálogo público de la plataforma en `/api/mcp` | Ruta 12, RT Gamer, Pandora |
+| Otras (WooCommerce sin API, sitios propios…) | sitemap + datos estructurados JSON-LD de cada producto (incremental: 250 páginas por ejecución) | Quest Loot, El Reino de los Duelos |
 
 Con `"platform": "auto"` detecta la plataforma solo. Después clasifica cada producto (tipo, idioma, edición, número de carta, condición, terminación reverse holo) con las reglas de `scraper/lib/normalize.mjs` y la lista de ediciones de `scraper/sets.mjs`.
 
@@ -47,7 +48,7 @@ Notas:
 Requiere [Node.js](https://nodejs.org) 20 o superior. No hay dependencias que instalar.
 
 ```bash
-npm run scrape        # lee todas las tiendas (≈1 minuto)
+npm run scrape        # lee todas las tiendas (≈9 minutos)
 npm run scrape afkstore cardnexus   # sólo algunas tiendas
 npm run serve         # abre http://localhost:8080
 npm test              # pruebas
@@ -65,7 +66,7 @@ Opciones útiles:
 
 | Campo | Para qué sirve |
 |---|---|
-| `platform` | `shopify`, `woocommerce`, `jsonld` o `auto` |
+| `platform` | `shopify`, `woocommerce`, `jumpseller`, `jsonld` o `auto` |
 | `onlyPokemon` | `true` si la tienda vende sólo Pokémon (no filtra por palabra clave) |
 | `collections` | (Shopify) lista de colecciones a leer, si la detección automática no sirve |
 | `categories` | (WooCommerce) IDs o slugs de categorías a leer |
@@ -79,15 +80,15 @@ En `scraper/sets.mjs` copia una línea y completa el nombre en inglés y españo
 
 ## Tiendas incluidas
 
-Activas (probadas): AFK Store, Tienda La Comarca, Singles Vault, Oasis Games, CardNexus, TCG Prime.
+`stores.json` tiene **126 tiendas activas** y **62 pausadas**. La lista se armó a partir del directorio de tiendas TCG de Chile de [cardpulsechile.com](https://cardpulsechile.com/tiendas), más algunas tiendas encontradas aparte. Una actualización completa lee unos **49.000 productos Pokémon** en unos 9 minutos.
 
-Pausadas en `stores.json`, con el motivo en el campo `nota`:
-- **New Player Chile**: Cloudflare bloquea lectores automáticos.
-- **Gorila TCG**: su `robots.txt` sólo permite buscadores; se respeta.
-- **Pandora Store**, **Genrio Store**: su catálogo no expone datos legibles sin un navegador.
-- **tcgcards.cl**: es un marketplace con varios vendedores por carta y necesita un adaptador propio.
+Cada tienda pausada tiene el motivo en el campo `nota`. Los más comunes:
+- **Tiendas Bsale** (One Up Store, Gorila TCG, Guild Dreams, Tsuki Manga, etc.): su `robots.txt` sólo permite buscadores como Google, y eso se respeta.
+- **Cloudflare** (New Player, Updown, Wargaming, WePlay, Mirax): bloquean a los lectores automáticos.
+- **PrestaShop sin sitemap, Wix y sitios de una sola página**: su catálogo no se puede leer sin un navegador.
+- **Sin productos Pokémon**: el catálogo se lee bien, pero hoy no tienen Pokémon. Si los agregan, basta con cambiar `enabled` a `true`.
 
-Para sumar tiendas que bloquean lectores automáticos, lo mejor es pedirles permiso o un feed de productos: a muchas les conviene aparecer en un comparador.
+Para sumar tiendas bloqueadas, lo mejor es pedirles permiso o un feed de productos: a muchas les conviene aparecer en un comparador.
 
 ## Limitaciones
 

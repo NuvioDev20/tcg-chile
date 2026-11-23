@@ -1,7 +1,7 @@
 {
   "settings": {
-    "concurrency": 4,
-    "delayMs": 700,
+    "concurrency": 10,
+    "delayMs": 600,
     "minPrice": 100
   },
   "stores": [
@@ -42,6 +42,1189 @@
       "platform": "woocommerce"
     },
     {
+      "id": "tcgprime",
+      "name": "TCG Prime",
+      "url": "https://tcgprime.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tiendaslevelup",
+      "name": "Tiendaslevelup",
+      "url": "https://tiendaslevelup.cl",
+      "platform": "woocommerce",
+      "defaultSinglesLanguage": "en"
+    },
+    {
+      "id": "ruta12club",
+      "name": "Ruta12Club",
+      "url": "https://ruta12club.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "rtgamerstore",
+      "name": "Rtgamerstore",
+      "url": "https://rtgamerstore.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "metagaming",
+      "name": "Metagaming",
+      "url": "https://metagaming.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "drawn",
+      "name": "Drawn",
+      "url": "https://drawn.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "gameofmagics",
+      "name": "Game of Magic Singles",
+      "url": "https://gameofmagicsingles.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "huntercard",
+      "name": "HunterCard TCG",
+      "url": "https://www.huntercardtcg.com",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "magic4ever",
+      "name": "Magic 4 Ever",
+      "url": "https://magic4ever.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "ineko",
+      "name": "Ineko Card Shop",
+      "url": "https://www.ineko.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "poisonandpotion",
+      "name": "Poison and Potion – All Games",
+      "url": "https://poisonandpotion.com",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tcgcoleccionistas",
+      "name": "TCG Coleccionistas",
+      "url": "https://tcgcoleccionistas.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "shoguntcg",
+      "name": "Shoguntcg",
+      "url": "https://shoguntcg.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "santosgames",
+      "name": "Santogames",
+      "url": "https://santogames.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "bastiongoblin",
+      "name": "Bastión Goblin",
+      "url": "https://bastiongoblin.com",
+      "platform": "shopify"
+    },
+    {
+      "id": "dust2",
+      "name": "Dust2",
+      "url": "https://dust2.gg",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "rockettcg",
+      "name": "Rocket TCG",
+      "url": "https://rockettcg.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "intercards",
+      "name": "Inter Cards",
+      "url": "https://intercards.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "chilemanga",
+      "name": "ChileManga",
+      "url": "https://www.chilemanga.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "laira",
+      "name": "Laira",
+      "url": "https://laira.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "sidedeck",
+      "name": "Sidedeck",
+      "url": "https://sidedeck.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "mundosaidok",
+      "name": "Mundo Saidok",
+      "url": "https://mundosaidok.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "vyt",
+      "name": "VyT Computación",
+      "url": "https://www.vytcomputacion.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "racoontoys",
+      "name": "Racoon Toys",
+      "url": "https://racoontoys.com",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "irion",
+      "name": "Irion",
+      "url": "https://irion.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "storedevastation",
+      "name": "Devastation Store",
+      "url": "https://www.storedevastation.com",
+      "platform": "shopify"
+    },
+    {
+      "id": "enroque",
+      "name": "Juegos Enroque",
+      "url": "https://juegosenroque.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "shinkodo",
+      "name": "Shinko Dō",
+      "url": "https://shinkodo.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "arcadiacollects",
+      "name": "Arcadia Collects",
+      "url": "https://arcadiacollects.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "tablecat",
+      "name": "Table Cat Games",
+      "url": "https://tablecatgames.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "dyskeu",
+      "name": "Dyskeu",
+      "url": "https://dyskeu.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tiendagengarage",
+      "name": "Tienda Gengarage",
+      "url": "https://tiendagengarage.com",
+      "platform": "jsonld"
+    },
+    {
+      "id": "cevenstore",
+      "name": "Ceven Store",
+      "url": "https://cevenstore.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "irgamers",
+      "name": "IR Gamers",
+      "url": "https://club.irgamers.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "challatcg",
+      "name": "ChallaTcg",
+      "url": "https://www.challatcg.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "collectorcenter",
+      "name": "Collector Center",
+      "url": "https://collectorcenter.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "geekers",
+      "name": "Geekers",
+      "url": "https://geekers.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "terratcg",
+      "name": "Terra TCG",
+      "url": "https://terratcg.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "progaming",
+      "name": "ProGaming",
+      "url": "https://progaming.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "nihongo",
+      "name": "Nihongo TCG",
+      "url": "https://nihongotcg.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "vudugaming",
+      "name": "Vudugaming",
+      "url": "https://vudugaming.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "zellados",
+      "name": "Zellados",
+      "url": "https://zellados.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tcgmatchsellados",
+      "name": "TCG Match Sellados",
+      "url": "https://tcgmatch.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "tiercero",
+      "name": "Tier Cero",
+      "url": "https://tiercero.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "questloot",
+      "name": "Quest Loot",
+      "url": "https://questloot.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "deckswap",
+      "name": "Deckswap",
+      "url": "https://deckswap.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "kreaturefactory",
+      "name": "Kreature Factory",
+      "url": "https://www.kreaturefactory.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tecitogames",
+      "name": "Tecitogames",
+      "url": "https://tecitogames.com",
+      "platform": "shopify"
+    },
+    {
+      "id": "minimarketcg",
+      "name": "MinimarkeTCG",
+      "url": "https://minimarketcg.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "bigbang",
+      "name": "Bigbang",
+      "url": "https://bigbang.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "funnyko",
+      "name": "Funnyko",
+      "url": "https://funnyko.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "p2wcl",
+      "name": "Pay to Win",
+      "url": "https://www.paytowin.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "tcgfamily",
+      "name": "Tcgfamily",
+      "url": "https://tcgfamily.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "luffytoys",
+      "name": "Luffytoys",
+      "url": "https://luffytoys.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "dexdeckstore",
+      "name": "Dexdeckstore",
+      "url": "https://dexdeckstore.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "apolostore",
+      "name": "Apolostore",
+      "url": "https://apolostore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "deckkingdom",
+      "name": "Deck Kingdom",
+      "url": "https://www.deckkingdom.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "casadejuegos",
+      "name": "Casa de Juegos",
+      "url": "https://www.casadejuegos.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "elreino",
+      "name": "El Reino de los Duelos",
+      "url": "https://elreinodelosduelos.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "safarizone",
+      "name": "Safari Zone",
+      "url": "https://safarizone.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "playsettcg",
+      "name": "Playset TCG Store",
+      "url": "https://playset.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "fenixcard",
+      "name": "Fenix Card Store",
+      "url": "https://fenixcardstore.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "theway",
+      "name": "The Way",
+      "url": "https://www.theway.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "pokestoretcg",
+      "name": "Pokestoretcg",
+      "url": "https://pokestoretcg.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "tcgacademy",
+      "name": "TCG Academy",
+      "url": "https://www.tcgacademy.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "themulligan",
+      "name": "The Mulligan",
+      "url": "https://themulligan.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "honnoto",
+      "name": "Honnoto",
+      "url": "https://honnoto.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "tcglifestore",
+      "name": "Tcglifestore",
+      "url": "https://tcglifestore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "piedrabruja",
+      "name": "Piedrabruja",
+      "url": "https://piedrabruja.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "darklight",
+      "name": "Dark Light Store",
+      "url": "https://darklightstore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "pokestop",
+      "name": "Pokestop",
+      "url": "https://pokestop.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "aogeekstore",
+      "name": "AO Geek Store",
+      "url": "https://aogeekstore.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "kokoromangaschile",
+      "name": "Kokoromangaschile",
+      "url": "https://kokoromangaschile.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "juegosgori",
+      "name": "Juegosgori",
+      "url": "https://juegosgori.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "lamanocargada",
+      "name": "La Mano Cargada",
+      "url": "https://lamanocargada.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "henkotcg",
+      "name": "HenkoTCG",
+      "url": "https://henkotcg.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "ozenparadisetcg",
+      "name": "Ozen Paradise TCG",
+      "url": "https://www.ozenparadisetcg.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "m4e",
+      "name": "Magic4ever",
+      "url": "https://www.m4e.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "goldsilver",
+      "name": "Goldsilver",
+      "url": "https://goldsilver.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "elwndelascartas",
+      "name": "El Wnd de las Cartas",
+      "url": "https://elwndelascartas.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "spellstcg",
+      "name": "Spells TCG",
+      "url": "https://spells.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "goldsliver",
+      "name": "Gold Sliver",
+      "url": "https://www.goldsliver.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "elkingo",
+      "name": "Elkingo",
+      "url": "https://elkingo.com",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "elarcanista",
+      "name": "El Arcanista",
+      "url": "https://elarcanista.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "tanukipuq",
+      "name": "Tanuki PUQ",
+      "url": "https://tanukipuq.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tiendamonos",
+      "name": "Tienda monos",
+      "url": "https://www.tienditamonostcg.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "puenteelantris",
+      "name": "Puenteelantris",
+      "url": "https://puenteelantris.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "cateamsgames",
+      "name": "CaTeams Games",
+      "url": "https://cateamsgames.com",
+      "platform": "shopify"
+    },
+    {
+      "id": "addictionmodel",
+      "name": "Addictionmodel",
+      "url": "https://addictionmodel.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "konohastore",
+      "name": "Konoha Store",
+      "url": "https://konohastore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "netking",
+      "name": "Netking",
+      "url": "https://netking.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "lafortalezapuq",
+      "name": "La Fortaleza PUQ",
+      "url": "https://lafortalezapuq.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "charizstore",
+      "name": "Charizstore",
+      "url": "https://charizstore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "elpanteon",
+      "name": "El Panteón",
+      "url": "https://www.elpanteon.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "tiendaeternia",
+      "name": "Tiendaeternia",
+      "url": "https://tiendaeternia.com",
+      "platform": "shopify"
+    },
+    {
+      "id": "zenith",
+      "name": "Zenith TCG",
+      "url": "https://zenithtcg.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "kima",
+      "name": "Kima",
+      "url": "https://www.kima.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "area52",
+      "name": "Area52",
+      "url": "https://area52.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "tiendareymago",
+      "name": "Tiendareymago",
+      "url": "https://tiendareymago.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "griffingames",
+      "name": "Griffingames",
+      "url": "https://griffingames.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "filecity",
+      "name": "Filecity",
+      "url": "https://filecity.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "pokedals",
+      "name": "PokeDals",
+      "url": "https://pokedals.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "metagame",
+      "name": "Metagame",
+      "url": "https://metagame.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "mrloc",
+      "name": "Mr Loc",
+      "url": "https://mrloc.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "cartonazo",
+      "name": "Cartonazo",
+      "url": "https://cartonazo.com",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "deckscards",
+      "name": "Decks Cards",
+      "url": "https://www.deckscards.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "morgul",
+      "name": "Morgul",
+      "url": "https://www.morgul.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "dulcemiel",
+      "name": "Dulce Miel",
+      "url": "https://www.dulcemiel.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "zonaxgamers",
+      "name": "Zona X Gamers Store",
+      "url": "https://zonaxgamers.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "ovniplay",
+      "name": "Ovni Play",
+      "url": "https://ovniplay.cl",
+      "platform": "shopify"
+    },
+    {
+      "id": "mesaredondatcg",
+      "name": "Mesa Redonda TCG",
+      "url": "https://mesaredondatcg.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "hanabistore",
+      "name": "Hanabi Store",
+      "url": "https://hanabistore.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "zendicard",
+      "name": "Zendicard",
+      "url": "https://zendicard.cl",
+      "platform": "jsonld"
+    },
+    {
+      "id": "zonacerotienda",
+      "name": "Zona Cero Store",
+      "url": "https://zonacerotienda.com",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "chikovstore",
+      "name": "Chikov Store",
+      "url": "https://chikovstore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "dwolffstore",
+      "name": "TCG D'Wolff Store",
+      "url": "https://www.tcgdwolffstore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "onplay",
+      "name": "OnPlay",
+      "url": "https://onplay.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "portaltcgstore",
+      "name": "Portaltcgstore",
+      "url": "https://portaltcgstore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "arkanatcg",
+      "name": "Arkanatcg",
+      "url": "https://arkanatcg.cl",
+      "platform": "jumpseller"
+    },
+    {
+      "id": "akumetsu",
+      "name": "Akumetsu",
+      "url": "https://akumetsumangastore.cl",
+      "platform": "woocommerce"
+    },
+    {
+      "id": "samuraitcg",
+      "name": "Samuraitcg",
+      "url": "https://www.samuraitcg.com",
+      "platform": "jsonld"
+    },
+    {
+      "id": "aldeajuegos",
+      "name": "Aldea Juegos",
+      "url": "https://www.aldeajuegos.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "araucaniagaming",
+      "name": "Araucania Gaming",
+      "url": "https://araucaniagaming.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "bloodmoongames",
+      "name": "Bloodmoongames",
+      "url": "https://www.bloodmoongames.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "bluecard",
+      "name": "Bluecard",
+      "url": "https://bluecard.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "cartasmagicsur",
+      "name": "Cartas Magicsur Chile",
+      "url": "https://www.cartasmagicsur.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "circuloeternocoleccionables",
+      "name": "Círculo Eterno Coleccionables",
+      "url": "https://circuloeternocoleccionables.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "crows",
+      "name": "Crows",
+      "url": "https://crows.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "dementegames",
+      "name": "DeMente Games",
+      "url": "https://www.dementegames.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "donquixotetcgs",
+      "name": "Donquixotetcgs",
+      "url": "https://donquixotetcgs.com",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Sitio Wix: el catálogo no se puede leer sin un navegador."
+    },
+    {
+      "id": "drakkarstore",
+      "name": "Drakkar Store",
+      "url": "https://drakkarstore.com",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "entrejuegos",
+      "name": "Entre Juegos",
+      "url": "https://www.entrejuegos.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "flexogames",
+      "name": "Flexogames",
+      "url": "https://flexogames.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "gameofmagictienda",
+      "name": "Gameofmagictienda",
+      "url": "https://gameofmagictienda.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "gamingplace",
+      "name": "Gaming Place",
+      "url": "https://www.gamingplace.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "gcjuegos",
+      "name": "GC Juegos",
+      "url": "https://gcjuegos.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "gengarhub",
+      "name": "GengarHub",
+      "url": "https://www.gengarhub.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "gomerrycards",
+      "name": "Gomerrycards",
+      "url": "https://gomerrycards.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "guildreams",
+      "name": "Guild Dreams",
+      "url": "https://www.guildreams.com",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "hacros",
+      "name": "Hacros",
+      "url": "https://www.hacros.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "hellstoresing",
+      "name": "Hell Store Sing",
+      "url": "https://www.hellstoresing.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Sitio Wix: el catálogo no se puede leer sin un navegador."
+    },
+    {
+      "id": "hypezone",
+      "name": "Hypezone",
+      "url": "https://hypezone.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "juegomania",
+      "name": "Juego Mania",
+      "url": "https://juegomania.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "jugueteriavalparaiso",
+      "name": "Juguetería Valparaíso",
+      "url": "https://jugueteriavalparaiso.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "korimangastore",
+      "name": "Korimangastore",
+      "url": "https://korimangastore.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "larutadegalva",
+      "name": "La Ruta de Galvarino",
+      "url": "https://www.larucadegalvarino.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "magicchile",
+      "name": "Magic Chile",
+      "url": "https://magic-chile.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "magicsur",
+      "name": "Magicsur",
+      "url": "https://magicsur.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "mesauno",
+      "name": "Mesa 1",
+      "url": "https://mesa1.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "mirax",
+      "name": "Mirax Hobbies",
+      "url": "https://mirax.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Cloudflare bloquea lectores automáticos (HTTP 403)."
+    },
+    {
+      "id": "moiijuegos",
+      "name": "Moiijuegos",
+      "url": "https://moiijuegos.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "mundoimaginario",
+      "name": "Mundo Imaginario",
+      "url": "https://mundoimaginario.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "netdecker",
+      "name": "Netdecker",
+      "url": "https://v3.netdecker.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "oneupstore",
+      "name": "Oneupstore",
+      "url": "https://oneupstore.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "piratastcg",
+      "name": "PiratasTCG",
+      "url": "https://piratastcg.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "planetaloz",
+      "name": "Planeta LOZ",
+      "url": "https://www.planetaloz.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "playtcg",
+      "name": "Play TCG",
+      "url": "https://playtcg.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "pueblolavanda",
+      "name": "Pueblo Lavanda",
+      "url": "https://pueblolavanda.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "ramsesstore",
+      "name": "Ramses Store",
+      "url": "https://ramsesstore.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "rocadragon",
+      "name": "Rocadragón Tienda (Sucursal Centro)",
+      "url": "https://rocadragon.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "rocketstore",
+      "name": "Rocket Store TCG",
+      "url": "https://www.rocketstore.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Sitio de una sola página (SPA): el catálogo no se puede leer sin un navegador."
+    },
+    {
+      "id": "royalecardstore",
+      "name": "Royale Card Store",
+      "url": "https://royalcardstore.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "shadowless",
+      "name": "Shadowless",
+      "url": "https://www.shadowless.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "shivano",
+      "name": "Shivano",
+      "url": "https://shivano.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "tcglab",
+      "name": "Tcglab",
+      "url": "https://tcglab.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "tcgunderground",
+      "name": "TCG Underground Chile",
+      "url": "https://tcgunderground.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "theseekercl",
+      "name": "Theseekercl",
+      "url": "https://theseekercl.com",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "thirdimpact",
+      "name": "Third Impact",
+      "url": "https://www.thirdimpact.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "tiendareverse",
+      "name": "Tiendareverse",
+      "url": "https://tiendareverse.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "No se encontró un catálogo legible (sin API pública ni sitemap con productos) o el sitio no respondió."
+    },
+    {
+      "id": "todojuegos",
+      "name": "Todojuegos",
+      "url": "https://www.todojuegos.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "top8",
+      "name": "Top 8 Game Center",
+      "url": "https://www.top8.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "topdeck",
+      "name": "Top Deck",
+      "url": "https://topdeck.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Se lee bien, pero hoy no tiene productos Pokémon en su catálogo."
+    },
+    {
+      "id": "tsuki",
+      "name": "Tsuki Manga",
+      "url": "https://tsukimanga.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
+      "id": "updown",
+      "name": "Updown",
+      "url": "https://updown.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Cloudflare bloquea lectores automáticos (HTTP 403)."
+    },
+    {
+      "id": "valhallastore",
+      "name": "Valhalla Store",
+      "url": "https://www.valhallastore.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "PrestaShop sin sitemap ni API pública: necesita un adaptador propio."
+    },
+    {
+      "id": "wargaming",
+      "name": "Wargaming",
+      "url": "https://wargaming.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Cloudflare bloquea lectores automáticos (HTTP 403)."
+    },
+    {
+      "id": "weplay",
+      "name": "WePlay Chile",
+      "url": "https://www.weplay.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Cloudflare bloquea lectores automáticos (HTTP 403)."
+    },
+    {
+      "id": "winterland",
+      "name": "Winterland",
+      "url": "https://winterland.cl",
+      "platform": "auto",
+      "enabled": false,
+      "nota": "Tienda Bsale: su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
+    },
+    {
       "id": "pandora",
       "name": "Pandora Store",
       "url": "https://www.pandorastore.cl",
@@ -74,12 +1257,6 @@
       "platform": "auto",
       "enabled": false,
       "nota": "Su robots.txt sólo permite buscadores (Google), así que se respeta y no se lee."
-    },
-    {
-      "id": "tcgprime",
-      "name": "TCG Prime",
-      "url": "https://tcgprime.cl",
-      "platform": "woocommerce"
     },
     {
       "id": "tcgcards",

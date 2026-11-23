@@ -5,14 +5,21 @@ export const USER_AGENT =
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const robotsCache = new Map();
 
-async function rawFetch(url, { timeoutMs = 30000, accept } = {}) {
+async function rawFetch(url, { timeoutMs = 30000, accept, body } = {}) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), timeoutMs);
   try {
     return await fetch(url, {
       signal: ctrl.signal,
       redirect: 'follow',
-      headers: { 'User-Agent': USER_AGENT, Accept: accept || '*/*', 'Accept-Language': 'es-CL,es;q=0.9,en;q=0.8' },
+      method: body ? 'POST' : 'GET',
+      body: body ? JSON.stringify(body) : undefined,
+      headers: {
+        'User-Agent': USER_AGENT,
+        Accept: accept || '*/*',
+        'Accept-Language': 'es-CL,es;q=0.9,en;q=0.8',
+        ...(body ? { 'Content-Type': 'application/json' } : {}),
+      },
     });
   } finally {
     clearTimeout(timer);
@@ -20,7 +27,10 @@ async function rawFetch(url, { timeoutMs = 30000, accept } = {}) {
 }
 
 // ── robots.txt ───────────────────────────────────────────────────────
-function parseRobots(text) {
+export const robotsSitemaps = new Map();
+
+function parseRobots(text, origin) {
+  robotsSitemaps.set(origin, [...text.matchAll(/^\s*sitemap\s*:\s*(\S+)/gim)].map((m) => m[1]));
   const groups = [];
   let cur = null;
   let lastWasAgent = false;
@@ -50,13 +60,18 @@ function ruleToRe(path) {
   return new RegExp('^' + body + (anchored ? '$' : ''));
 }
 
+export async function sitemapsFromRobots(url) {
+  await allowedByRobots(url);
+  return robotsSitemaps.get(new URL(url).origin) || [];
+}
+
 export async function allowedByRobots(url) {
   const u = new URL(url);
   let rules = robotsCache.get(u.origin);
   if (!rules) {
     try {
       const res = await rawFetch(`${u.origin}/robots.txt`, { timeoutMs: 15000 });
-      rules = res.ok ? parseRobots(await res.text()) : [];
+      rules = res.ok ? parseRobots(await res.text(), u.origin) : [];
     } catch {
       rules = [];
     }
@@ -73,7 +88,7 @@ export async function allowedByRobots(url) {
 // ── Pedido con espera y reintentos ───────────────────────────────────
 export function makeClient({ delayMs = 700, retries = 3 } = {}) {
   let last = 0;
-  return async function get(url, { json = false, allow404 = false } = {}) {
+  return async function get(url, { json = false, allow404 = false, body } = {}) {
     if (!(await allowedByRobots(url))) {
       const e = new Error(`robots.txt no permite leer ${url}`);
       e.code = 'ROBOTS';
@@ -85,7 +100,7 @@ export function makeClient({ delayMs = 700, retries = 3 } = {}) {
       last = Date.now();
       let res;
       try {
-        res = await rawFetch(url, { accept: json ? 'application/json' : 'text/html,application/xhtml+xml,*/*' });
+        res = await rawFetch(url, { body, accept: json ? 'application/json, text/event-stream' : 'text/html,application/xhtml+xml,*/*' });
       } catch (err) {
         if (attempt < retries) {
           await sleep(1500 * (attempt + 1));

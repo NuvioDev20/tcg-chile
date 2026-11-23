@@ -1,12 +1,13 @@
+import { sitemapsFromRobots } from '../lib/http.mjs';
 // Adaptador genérico (Jumpseller, Bsale, sitios propios…): recorre el sitemap y lee los
 // datos estructurados (JSON-LD schema.org/Product) de cada página de producto.
 // Es más lento, así que es incremental: sólo vuelve a leer páginas que cambiaron.
 
-const DEFAULT_PRODUCT_RE = /\/(product|products|producto|productos|p|item|tienda)\/[^/?#]+/i;
+const DEFAULT_PRODUCT_RE = /\/(product|products|producto|productos|p|item|tienda)\/[^/?#]+|\/\d+-[^/?#]+\.html$/i;
 
 export async function detect(store, get) {
   try {
-    const urls = await sitemapUrls(store, get, 1);
+    const urls = await sitemapUrls(store, get, 8);
     return urls.length > 0;
   } catch {
     return false;
@@ -14,7 +15,9 @@ export async function detect(store, get) {
 }
 
 async function sitemapUrls(store, get, limitSitemaps = 50) {
-  const starts = store.sitemaps?.length ? store.sitemaps.map((s) => new URL(s, store.url).href) : [`${store.url}/sitemap.xml`, `${store.url}/sitemap_index.xml`];
+  const starts = store.sitemaps?.length
+    ? store.sitemaps.map((s) => new URL(s, store.url).href)
+    : [...(await sitemapsFromRobots(store.url)), `${store.url}/sitemap.xml`, `${store.url}/sitemap_index.xml`, `${store.url}/wp-sitemap.xml`, `${store.url}/1_index_sitemap.xml`];
   const productRe = store.productUrlPattern ? new RegExp(store.productUrlPattern, 'i') : DEFAULT_PRODUCT_RE;
   const out = new Map();
   const queue = [...starts];

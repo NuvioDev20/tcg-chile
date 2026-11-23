@@ -15,7 +15,7 @@ const stripHtml = (s = '') => String(s).replace(/<[^>]*>/g, ' ');
 // ── ¿Es Pokémon TCG? ─────────────────────────────────────────────────
 const POKEMON_RE = /\bpokemon\b|\bptcg\b|\bpkmn\b/;
 const NOT_TCG_RE =
-  /\b(peluche|plush|figura|figure|funko|polera|camiseta|llavero|taza|mochila|videojuego|nintendo switch|lego|mega construx|squishmallow|ticket|entrada|inscripcion|gift ?cards?|tarjeta de regalo|giftcard|torneo|liga pokemon|league challenge|evento|event)\b/;
+  /\b(peluches?|plush|figuras?|mini ?figuras?|figures?|funko|poleras?|camisetas?|polerones?|llaveros?|tazas?|mochilas?|gorros?|stickers?|videojuegos?|nintendo switch|lego|mega construx|squishmallow|ticket|entrada|inscripcion|gift ?cards?|tarjeta de regalo|giftcard|torneo|liga pokemon|league challenge|evento|event)\b/;
 const OTHER_TCG_RE =
   /\b(magic the gathering|mtg|yu-?gi-?oh|one piece card|digimon|lorcana|dragon ball|flesh and blood|riftbound|star wars unlimited|gundam card|mitos y leyendas|weiss schwarz|union arena)\b/;
 

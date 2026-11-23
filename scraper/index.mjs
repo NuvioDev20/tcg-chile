@@ -14,13 +14,14 @@ import { SETS } from './sets.mjs';
 import * as shopify from './adapters/shopify.mjs';
 import * as woocommerce from './adapters/woocommerce.mjs';
 import * as jsonld from './adapters/jsonld.mjs';
+import * as jumpseller from './adapters/jumpseller.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = process.env.OUT_DIR || path.join(ROOT, 'public', 'data');
 const STATE_FILE = process.env.STATE_FILE || path.join(ROOT, '.cache', 'state.json');
 const STORES_FILE = process.env.STORES_FILE || path.join(ROOT, 'stores.json');
-const ADAPTERS = { shopify, woocommerce, jsonld };
-const DETECT_ORDER = ['shopify', 'woocommerce', 'jsonld'];
+const ADAPTERS = { shopify, woocommerce, jumpseller, jsonld };
+const DETECT_ORDER = ['shopify', 'woocommerce', 'jumpseller', 'jsonld'];
 
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -67,7 +68,7 @@ async function resolvePlatform(store, get, state) {
   for (const name of DETECT_ORDER) {
     if (await ADAPTERS[name].detect(store, get)) return name;
   }
-  throw new Error('No se reconoció la plataforma de la tienda (ni Shopify, ni WooCommerce, ni sitemap con JSON-LD)');
+  throw new Error('No se reconoció la plataforma de la tienda (ni Shopify, ni WooCommerce, ni Jumpseller, ni sitemap con JSON-LD)');
 }
 
 async function scrapeStore(store, settings, state, now) {
